@@ -22,22 +22,25 @@ for file in file_names:
     if os.path.isdir(os.path.join(directory, file)):
         pass
     else:
-        invfile = file[::-1]
-        extention = invfile[invfile.index('.')::-1].lower()
-
-        if extention in image_ext:
-            new_dir = 'dowloaded-images'
-        elif extention in audio_ext:
-            new_dir = 'dowloaded-audios'
-        elif extention in document_ext:
-            new_dir = 'dowloaded-documents'
-        elif extention in video_ext:
-           new_dir = 'dowloaded-videos'
-        elif extention in code_ext:
-            new_dir = 'dowloaded-codes'
-        elif extention in executable_ext:
-            new_dir = 'downloaded-executables'
-        else: # Outros
-            new_dir = 'others'
+        try:
+            invfile = file[::-1]
+            extention = invfile[invfile.index('.')::-1].lower()
+        except:
+            new_dir = directory_list[6]
+        else:
+            if extention in image_ext:
+                new_dir = directory_list[0]
+            elif extention in audio_ext:
+                new_dir = directory_list[1]
+            elif extention in document_ext:
+                new_dir = directory_list[2]
+            elif extention in video_ext:
+                new_dir = directory_list[3]
+            elif extention in code_ext:
+                new_dir = directory_list[4]
+            elif extention in executable_ext:
+                new_dir = directory_list[5]
+            else: # Outros
+                new_dir = directory_list[6]
         new_dir = os.path.join(directory, new_dir)
         os.rename(os.path.join(directory, file), os.path.join(new_dir, file))

@@ -1,2 +1,5 @@
-# Gerenciador-de-arquivos
- Projeto de gerenciador de arquivos em python, feito para organizar a pasta "Downloads" automaticamente.
+# GERENCIADOR DE ARQUIVOS EM PYTHON
+* Gerenciadorque organiza os arquivos em pastas pautadas
+## Requisitos:
+* Python 3.8.10 ou mais recente [[Clique aqui para acessar o site para download](https://www.python.org/)]
+
